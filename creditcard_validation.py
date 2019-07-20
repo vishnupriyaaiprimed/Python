@@ -14,9 +14,8 @@ for i in range(n):
         print("Invalid")
     else:
         n=match.group(1)+match.group(2)+match.group(3)+match.group(4)
-        for j in range(13):
-            if n[j]==n[j+1] and n[j]==n[j+2] and n[j]==n[j+3]:
-                    print("Invalid")
-                    break
+        match=re.search(r'(\d)\1\1\1',n)
+        if match:
+            print("Invalid")
         else:
             print("Valid")
